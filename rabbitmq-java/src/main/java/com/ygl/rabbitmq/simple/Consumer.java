@@ -31,7 +31,7 @@ public class Consumer {
             //3、创建连接获取通道Channel
             channel = connection.createChannel();
             //4、通过通道创建交换机，声明队列，绑定关系，路由key，发送消息，和接收消息
-            String queueName = "queue1";
+            String queueName = "queue8";
             channel.basicConsume(queueName, true, new DeliverCallback() {
                 public void handle(String s, Delivery delivery) throws IOException {
                     System.out.println("收到消息是：" + new String(delivery.getBody(), "UTF-8"));
