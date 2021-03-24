@@ -28,9 +28,18 @@ public class TTLRabbitMqConfiguration {
         hashMap.put("x-message-ttl",5000);//后面的5000是过期时间，单位是ms，
         return new Queue("ttl.queue",true,false,false,hashMap);
     }
+    //队列内消息过期时间
+    @Bean
+    public Queue ttlMessageDirectQueue(){
+        return new Queue("ttl.message.queue",true,false,false);
+    }
     //3：完成绑定关系（队列和交换机完成绑定关系）
     @Bean
     public Binding ttlDirectBinding(){
         return BindingBuilder.bind(ttlDirectQueue()).to(ttlExchange()).with("ttl");
+    }
+    @Bean
+    public Binding ttlMessageDirectBinding(){
+        return BindingBuilder.bind(ttlMessageDirectQueue()).to(ttlExchange()).with("ttlmessage");
     }
 }

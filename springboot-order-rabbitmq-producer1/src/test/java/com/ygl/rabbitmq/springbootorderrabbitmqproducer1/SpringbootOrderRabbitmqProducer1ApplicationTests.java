@@ -25,5 +25,13 @@ class SpringbootOrderRabbitmqProducer1ApplicationTests {
     void testTtl(){
         orderService.makeOrderDirectTtl("1","4",8);
     }
+    @Test
+    void testTtlMessage(){
+        orderService.makeOrderDirectTtlMessage("1","4",8);
+    }
+    @Test
+    void testTtlMessage1(){
+        orderService.makeOrderDirectTtlMessage1("1","4",8);
+    }
 
 }
