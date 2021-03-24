@@ -10,8 +10,12 @@ class SpringbootOrderRabbitmqProducer1ApplicationTests {
     @Autowired
     OrderService orderService;
     @Test
-    void contextLoads() {
-        orderService.makeOrder("1","1",22);
+    void testFanout() {
+        orderService.makeOrderFanout("1","1",22);
+    }
+    @Test
+    void testDirect(){
+        orderService.makeOrderDirect("1","2",3);
     }
 
 }
