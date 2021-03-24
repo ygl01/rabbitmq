@@ -21,6 +21,6 @@ public class TopicSMSConsumber {
     //消息的落脚点
     @RabbitHandler
     public void reviceMessage(String message){
-        System.out.println("sms fanout-----开始接受的订单消息是："+message);
+        System.out.println("sms Topic-----开始接受的订单消息是："+message);
     }
 }

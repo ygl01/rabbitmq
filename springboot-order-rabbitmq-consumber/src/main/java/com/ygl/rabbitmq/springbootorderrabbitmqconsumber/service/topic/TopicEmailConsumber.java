@@ -19,6 +19,6 @@ public class TopicEmailConsumber {
     //消息的落脚点
     @RabbitHandler
     public void reviceMessage(String message){
-        System.out.println("Email fanout------接受到的订单消息是："+message);
+        System.out.println("Email Topic------接受到的订单消息是："+message);
     }
 }

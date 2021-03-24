@@ -57,7 +57,7 @@ public class OrderService {
         //3：通过mq来完成消息分发
         //参数1：交换机   参数2：路由key/queue队列名称 参数3：消息内容
         String exchangeName = "topic_order_exchange";
-        String routingKey = "";
+        String routingKey = "sms.email";
         rabbitTemplate.convertAndSend(exchangeName,routingKey,orderId);
 
     }
