@@ -10,7 +10,6 @@ import org.springframework.stereotype.Service;
         value = @Queue(value = "duanxin.topic.queue",durable = "true",autoDelete = "false"),
         exchange = @Exchange(value = "topic_order_exchange",type = ExchangeTypes.TOPIC),
         key = "#.duanxin.#"
-
 ))
 public class TopicDuanxinConsumber {
 
